@@ -8,9 +8,6 @@
 {% block cssBlock %}
 <link id="theme-style" rel="stylesheet" href="{% static 'home/css/theme-1.css' %}">
 <link id="theme-style" rel="stylesheet" href="{% static 'home/css/custom-1.css' %}">
-<style>
-
-</style>
 
 {% endblock %}
 
@@ -21,7 +18,7 @@
 	<section class="cta-section theme-bg-light py-5">
 		<div class="container text-center single-col-max-width">
 			<h1 class="heading">Nam Le's Blog - Các Dự Án Developer</h1>
-			<div class="intro">Đây là trang chia sẻ lại những kiến thức từ những dự án của tôi.</div>
+			<div class="intro">Website được thực hiện bằng Django and Bootstrap.</div>
 		</div><!--//container-->
 	</section>
 	
@@ -42,11 +39,19 @@
                     </div><!--//row-->
                 </div><!--//item-->
             {% endfor %}
-			
-			<nav class="blog-nav nav nav-justified my-5">
-			  <a class="nav-link-prev nav-item nav-link d-none rounded-left" href="#">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
-			  <a class="nav-link-next nav-item nav-link rounded" href="#">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
-			</nav>
+				<div class = "show-trang"><strong>
+					Trang {{ listBlog.number }} / {{ listBlog.paginator.num_pages }}.
+				</strong>
+				</div>
+				<nav class="blog-nav nav nav-justified my-5">
+					{% if listBlog.has_previous %}
+						<a class="nav-link-prev nav-item nav-link rounded-left" href="?page={{ listBlog.previous_page_number }}">previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+					{% endif %}
+					{% if listBlog.has_next %}
+						<a class="nav-link-next nav-item nav-link rounded-right" href="?page={{ listBlog.next_page_number }}">next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+					{% endif %}
+				</nav>
+			</div>
 			
 		</div>
 	</section>

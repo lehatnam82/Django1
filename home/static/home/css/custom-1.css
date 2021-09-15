@@ -7,3 +7,5 @@ a {color: #0000FF;}
 .theme-bg-dark {background: #000055 !important;}
 .header .nav-item .nav-link.active {color:#48E0E4 !important;}
 .header .nav-item .nav-link{color: white !important;}
+div.show-trang {margin-top: 3rem !important; margin-bottom: 10px; text-align: center;}
+.my-5 {margin-top: 0px !important;}
