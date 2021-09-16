@@ -15,7 +15,8 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
+CKEDITOR_UPLOAD_PATH = "uploads/"
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -40,9 +41,9 @@ INSTALLED_APPS = [
     'home',
     'blog',
     'contact',
-    'froala_editor',
     'core',
-
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [

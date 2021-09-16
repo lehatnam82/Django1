@@ -1,12 +1,12 @@
 from django.db import models
-from froala_editor.fields import FroalaField
+from ckeditor_uploader.fields import RichTextUploadingField
 from .helpers import *
 
 # Create your models here.
 class modelBlog(models.Model):
     title = models.CharField(max_length=1000)
     intro = models.CharField(max_length=1000,null = True)
-    content = FroalaField()
+    content = RichTextUploadingField()
     slug = models.SlugField(max_length=1000,null = True, blank=True)
     image = models.ImageField(upload_to="blog")
     created_at = models.DateTimeField(auto_now_add=True)
